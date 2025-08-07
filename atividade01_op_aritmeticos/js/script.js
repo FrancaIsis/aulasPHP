@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', function(){
+
+    // função para validar as entradas
+    function validarEntrada(entrada){
+        if(entrada === null || entrada.trim() === ""){
+            alert("Digite um número")
+            return null;
+        } else{ // nao precisa validar se é numero, o html ja trata isso
+            return parseFloat(entrada);
+        }
+    }
+
+      //selecionando o formulario
+    const form = document.getElementById('formCalculadora');
+
+    //escutando o formulario
+    form.addEventListener('submit', function(event){
+        event.preventDefault();
+        //pegando os valores dos numeros
+        const num1 = validarEntrada(document.getElementById('num1').value);
+        const num2 = validarEntrada(document.getElementById('num2').value);
+        const operacao = document.getElementById('escolha').value;
+
+       
+    })
+})

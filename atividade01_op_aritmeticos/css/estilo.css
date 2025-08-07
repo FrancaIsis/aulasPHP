@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(216, 226, 228);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    background-color: rgba(29, 144, 238, 0.822);
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+}
+
+/* Caixa central do formulário ou resultado */
+.caixa{
+    background-color: white;
+    display: inline-block;
+    padding: 20px 30px; border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
