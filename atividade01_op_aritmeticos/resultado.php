@@ -7,69 +7,46 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <!-- Título da página -->
-     <h1>Resultado:</h1>
-     <p>
+    <h1>Resultado:</h1>
+    <p>
         <?php
-            //verificando se os numeros foram enviados através do formulário
-            if(isset($_POST['num1'])){
-                $num1 = htmlspecialchars($_POST['num1']);
-            }
-            if(isset($_POST['num2'])){
-                $num2 = htmlspecialchars($_POST['num2']);
-            }
-            if(isset($_POST['escolha'])){
-                $operacao = htmlspecialchars($_POST['escolha']);
-            }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $num1 = (float) $_POST['num1'];
+            $num2 = (float) $_POST['num2'];
+            $escolha = $_POST['escolha'];
 
-            // funções
-            function soma($n1, $n2){
-                return $n1 + $n2;
-            }
-
-            function subtracao($n1, $n2){
-                return $n1 - $n2;
-            }
-
-            function multiplicacao($n1, $n2){
-                return $n1 * $n2;
-            }
-
+            function soma($n1, $n2){ return $n1 + $n2; }
+            function subtracao($n1, $n2){ return $n1 - $n2; }
+            function multiplicacao($n1, $n2){ return $n1 * $n2; }
             function divisao($n1, $n2){
-                if($n2 === 0){
+                if ($n2 == 0) {
                     return "O segundo número não pode ser zero";
-                }else{
-                    return $n1 / $n2;
-                }                
+                }
+                return $n1 / $n2;
             }
 
-            switch($operacao){
+            switch($escolha){
                 case 'soma':
-                    $resultado = soma($num1, $num2);
-                    echo "O resultado de $num1 + $num2 é $resultado";
+                    echo "O resultado de $num1 + $num2 é " . soma($num1, $num2);
                     break;
                 case 'subtracao':
-                    $resultado = subtracao($num1, $num2);
-                    echo "O resultado de $num1 - $num2 é $resultado";
+                    echo "O resultado de $num1 - $num2 é " . subtracao($num1, $num2);
                     break;
                 case 'multiplicacao':
-                    $resultado = multiplicacao($num1, $num2);
-                    echo "O resultado de $num1 &times; $num2 é $resultado";
+                    echo "O resultado de $num1 × $num2 é " . multiplicacao($num1, $num2);
                     break;
                 case 'divisao':
-                    $resultado = divisao($num1, $num2);
-                    echo "O resultado de $num1 &divide; $num2 é $resultado";
+                    echo "O resultado de $num1 ÷ $num2 é " . divisao($num1, $num2);
                     break;
                 default:
-                    echo "Operação inválida";
-                    break;
+                    echo "Operação inválida.";
             }
+        } else {
+            echo "Acesse o formulário para calcular.";
+        }
         ?>
     </p>
 
-    <!-- Link para voltar à página do formulário -->
-     <a href="index.php">Fazer outro cálculo</a>
-
-    
+    <a href="index.php">Fazer outro cálculo</a>
 </body>
 </html>

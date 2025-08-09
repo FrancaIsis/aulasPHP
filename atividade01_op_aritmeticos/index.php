@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operadores Aritméticos</title>
     <!-- Link para o CSS externo -->
-    <link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
         <h1>Calculadora: Operadores Aritméticos</h1>
     </header>
     
-
+<div class="container">
     <div class="caixa">
         <form id="formCalculadora" method="POST" action="resultado.php">
             <label>Digite o primeiro número:</label>
@@ -30,6 +30,7 @@
             <button type="submit">Calcular</button>
         </form>
     </div>
+</div>
 
     <!-- Link para o JavaScript externo -->
      <script src="js/script.js"></script>
