@@ -14,7 +14,7 @@
     
 <div class="container">
     <div class="caixa">
-        <form id="formCalculadora" method="POST" action="resultado.php">
+        <form id="formCalculadora" method="POST" action="resultado2.php">
             <label>Digite o primeiro número:</label>
             <input type="number" id="num1" name="num1" required><br>
             <label>Digite o segundo número:</label>

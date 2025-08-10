@@ -7,69 +7,81 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <!-- Título da página -->
-     <h1>Resultado:</h1>
-     <p>
-        <?php
-            //verificando se os numeros foram enviados através do formulário
-            if(isset($_POST['num1'])){
-                $num1 = htmlspecialchars($_POST['num1']);
-            }
-            if(isset($_POST['num2'])){
-                $num2 = htmlspecialchars($_POST['num2']);
-            }
-            if(isset($_POST['escolha'])){
-                $escolha = htmlspecialchars($_POST['escolha']);
-            }
+    <header>
+        <h1>Resultado da Operação</h1>
+    </header>
+    <div class="container">
+        <div class="caixa">
+            <p>
+                <?php
+                    //verificando se os numeros foram enviados através do formulário
+                    if(isset($_POST['num1'])){
+                        $num1 = htmlspecialchars($_POST['num1']);
+                    }
+                    if(isset($_POST['num2'])){
+                        $num2 = htmlspecialchars($_POST['num2']);
+                    }
+                    if(isset($_POST['escolha'])){
+                        $escolha = htmlspecialchars($_POST['escolha']);
+                    }
 
-            // funções
-            function soma($n1, $n2){
-                return $n1 + $n2;
-            }
+                    // funções
+                    function soma($n1, $n2){
+                        return $n1 + $n2;
+                    }
 
-            function subtracao($n1, $n2){
-                return $n1 - $n2;
-            }
+                    function subtracao($n1, $n2){
+                        return $n1 - $n2;
+                    }
 
-            function multiplicacao($n1, $n2){
-                return $n1 * $n2;
-            }
+                    function multiplicacao($n1, $n2){
+                        return $n1 * $n2;
+                    }
 
-            function divisao($n1, $n2){
-                if($n2 === 0){
-                    return "O segundo número não pode ser zero";
-                }else{
-                    return $n1 / $n2;
-                }                
-            }
+                    function divisao($n1, $n2){
+                        if($n2 == 0){
+                            return false; 
 
-            switch($operacao){
-                case 'soma':
-                    $resultado = soma($num1, $num2);
-                    echo "O resultado de $num1 + $num2 é $resultado";
-                    break;
-                case 'subtracao':
-                    $resultado = subtracao($num1, $num2);
-                    echo "O resultado de $num1 - $num2 é $resultado";
-                    break;
-                case 'multiplicacao':
-                    $resultado = multiplicacao($num1, $num2);
-                    echo "O resultado de $num1 &times; $num2 é $resultado";
-                    break;
-                case 'divisao':
-                    $resultado = divisao($num1, $num2);
-                    echo "O resultado de $num1 &divide; $num2 é $resultado";
-                    break;
-                default:
-                    echo "Operação inválida";
-                    break;
-            }
-        ?>
-    </p>
+                        }else{
+                            return $n1 / $n2;
+                        }                
+                    }
 
-    <!-- Link para voltar à página do formulário -->
-     <a href="index.php">Fazer outro cálculo</a>
+                    switch($escolha){
+                        case 'soma':
+                            $resultado = soma($num1, $num2);
+                            echo "O resultado de <strong>$num1 + $num2 é</strong> = <strong>$resultado</strong> <br>";
+                            echo "<a href='index.php'>Fazer outro cálculo</a>";
+                            break;
+                        case 'subtracao':
+                            $resultado = subtracao($num1, $num2);
+                            echo "O resultado de <strong>$num1 - $num2 é</strong> = <strong>$resultado</strong><br>";
+                            echo "<a href='index.php'>Fazer outro cálculo</a>";
+                            break;
+                        case 'multiplicacao':
+                            $resultado = multiplicacao($num1, $num2);
+                            echo "O resultado de <strong>$num1 &times; $num2 é</strong> = <strong>$resultado</strong><br>";
+                            echo "<a href='index.php'>Fazer outro cálculo</a>";
+                            break;
+                        case 'divisao':
+                            $resultado = divisao($num1, $num2);
+                            if ($resultado=== false){
+                                echo "Erro: Divisão por zero não é permitida.<br> <a href='index.php'>Voltar</a>";
+                            } else{
+                                echo "O resultado de <strong>$num1 &divide; $num2 é</strong> = <strong>$resultado</strong><br>";
+                                echo "<a href='index.php'>Fazer outro cálculo</a>";
+                            }
+                            break;
+                        default:
+                            echo "Operação inválida";
+                            break;
+                    }
+                ?>
+            </p>            
 
-    
+     
+
+        </div>
+    </div>
 </body>
 </html>
