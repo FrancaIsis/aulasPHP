@@ -30,7 +30,7 @@
             'Nota3' = > 10,
             'Nota4' = > 10,
         ];
-        //Exibe o conteúdo do aaray formatado na tela
+        //Exibe o conteúdo do array formatado na tela
 
         echo "<pre>";
         print_r($alunos);
