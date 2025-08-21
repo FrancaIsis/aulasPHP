@@ -11,7 +11,7 @@ Permita três tentativas de login antes de encerrar o programa.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="css/estilo.css"/>
 </head>
 <body>
@@ -20,18 +20,22 @@ Permita três tentativas de login antes de encerrar o programa.
     </header>
     <main>
         <div class="container">
-            <h1>Login</h1>
+            <h1>Cadastro</h1>
             <!-- Formulário que envia para valida.php -->
-            <form actio="public/valida.php" method = "POST" id = "formLogin">
+            <form actio="public/usuario.php" method = "POST" id = "formCadastro">
+                <label>Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label>Idade:</label>
+                <input type="number" id="idade" name="idade" required>
                 <label>Usuário:</label>
                 <input type="text" id="usuario" name="usuario" required>
                 <labe>Senha:</label>
                 <input type="password" id="senha" name="senha" required>
-                <button type="submit">Conectar</button>
+                <button type="submit">Cadastrar</button>
             </form>
             <br>
             <hr>
-            <!-- <a href="public/usuario.php">Realizar Cadastro</a> -->
+            <a href="index.php">Voltar</a>
         </div>
     </main>
 </body>
