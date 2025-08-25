@@ -6,7 +6,7 @@ if(isset($_POST['temp'])){
     $num = (int)$num;
 }
 if(isset($_POST['formatoAtual'])){
-    $atual = htmlspecialchars($_POST['formatoAual']);    
+    $atual = htmlspecialchars($_POST['formatoAtual']);    
 }
 if(isset($_POST['formatoNovo'])){
     $novo = htmlspecialchars($_POST['formatoNovo']);    
@@ -55,12 +55,24 @@ $funcoes = [
     'kf' => 'convertKelvinFahrenheit'
 ];
 
-$chave = $origem . $destino;
+$unidades = [
+    'c' => '°C',
+    'f' => '°F',
+    'k' => 'K'
+];
+
+$chave = $atual . $novo;
 
 if (isset($funcoes[$chave])) {
-    $resultado = $funcoes[$chave]($valor); // chama a função dinamicamente
+    $resultado = $funcoes[$chave]($num); // chama a função dinamicamente
 } else {
-    $resultado = $valor; //na lista do array associativo nao vai ter tipo cc ou ff
+    $resultado = $num; //na lista do array associativo nao vai ter tipo cc ou ff
 }
 
+if ($resultado != $num){
+    echo $num.$unidades[$atual]."=".$resultado.$unidades[$novo];
+}
+else{
+    echo "A conversão proposta não é valida.";
+}
 ?>

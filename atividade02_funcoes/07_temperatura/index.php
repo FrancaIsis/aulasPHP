@@ -6,6 +6,12 @@ Crie um programa que converta temperaturas entre Celsius, Fahrenheit e Kelvin.
 - Permita que o usuário repita quantas conversões quiser. -->
 <?php
 session_start();
+$resultado='';
+$mensagem= '';
+
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    include 'public/processa.php';
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,7 +28,7 @@ session_start();
     <main>
         <div class="container">
             <div class="caixa">
-                <form action="public/processa.php" id="formTemp" method="POST">
+                <form action="" id="formTemp" method="POST">
                     <label>Digite uma temperatura:</label>
                     <input type="number" id="temp" name="temp" required>
                     <select name="formatoAtual" id = "formatoAtual">
