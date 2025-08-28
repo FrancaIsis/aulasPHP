@@ -47,9 +47,18 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
                     <button type="submit">Calcular</button>
                 </form>
+
+                <?php
+ if (isset($_SESSION['resultado'])) {
+                echo "<h3>Resultado: " . $_SESSION['resultado'] . "</h3>";
+                unset($_SESSION['resultado']); 
+            }
+?>  
             </div>
+            <a id="voltar" href="index.php">Voltar</a>
         </div>
     </main>
-    
+ 
+
 </body>
 </html>
