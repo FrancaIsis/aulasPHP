@@ -39,7 +39,10 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     <button type="submit" value="calcular" name="acao">Adivinhar</button>
                     <button type="submit" value="sair" name="acao">Sair</button>
                 </form>
-
+            <?php if (isset($_SESSION['mensagem'])): ?>
+                <p><strong><?php echo $_SESSION['mensagem']; ?></strong></p>
+            <?php unset($_SESSION['mensagem']); ?>
+            <?php endif; ?>
 
             </div>
             <a id="voltar" href="index.php">Voltar</a>

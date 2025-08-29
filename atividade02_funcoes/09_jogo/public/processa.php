@@ -25,6 +25,23 @@ if ($acao=='sair'){
         exit;
 
 if ($acao=='calcular'){
+    $numUsuario = $num;
+    $palpite = $_SESSION['numSecreto'];
+    $_SESSION['tentativas']++;
+    //chama a função
+    $resultado = verificaTentativa($numUsuario,$palpite);
 
+    if($resultado == "Acertou"){
+        $_SESSION['mensagem'] = "Parabéns! Você concluiu o desafio após {$_SESSION['numTentativas']} tentativas!";
+    
+         while (isset($_SESSION['numero'])) {
+            unset($_SESSION['numero']);
+            unset($_SESSION['tentativas']);
+            }
+        }else {
+            $_SESSION['mensagem'] = $resultado;
+        }
+    header("Location: index.php");
+    exit; 
 }
 ?>
