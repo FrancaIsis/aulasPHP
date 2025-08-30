@@ -12,6 +12,7 @@ for($i=1; $i <=10; $i++){
     $resultado = tabuada($num, $i);
     echo $num ." (&times;) ". $i ." = " .$resultado."<br>";
 }
+echo "<br>";
 echo "<a href='index.php'>Voltar</a>";
 
 ?>

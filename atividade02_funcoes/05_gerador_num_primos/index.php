@@ -9,7 +9,7 @@ Crie um programa que gere todos os números primos de 1 até um número informad
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Números primos</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="public/css/estilo.css">
 </head>
 <body>
     <header>
@@ -28,4 +28,7 @@ Crie um programa que gere todos os números primos de 1 até um número informad
     </main>
     
 </body>
+<footer>
+    <p>&copy;Curso de Desenvolvimento de Sistemas - Senac - 2025
+</footer>
 </html>

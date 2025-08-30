@@ -1,0 +1,111 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do body */
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Área principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Caixa do formulário */
+.caixa {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Label e inputs */
+.caixa label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.caixa input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botão */
+.caixa button, a {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.caixa button:hover, a {
+    background-color: #005f87;
+}
+.resultado{
+    background-color: rgb(159, 214, 222);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    line-height: 1.5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', Verdana, sans-serif;
+    height: auto;
+    color: rgb(14, 14, 75);
+}
+a{
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    padding: auto;
+}
+footer {
+    background-color: #0077b6;  
+    color: #fff;            
+    text-align: center;    
+    padding: 15px 0;      
+    font-size: 14px;       
+    position:relative;      
+    bottom: 0;             
+    width: 100%;           
+}

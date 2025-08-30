@@ -13,7 +13,6 @@ if(!isset($_SESSION['numSecreto'])){
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     include 'public/processa.php';
-    $acao = $_POST['acao'];
 
 }
 ?>

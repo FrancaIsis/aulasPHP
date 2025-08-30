@@ -1,9 +1,9 @@
 <?php
-
-if(isset($_POST['num'])){
-    $num = htmlspecialchars($_POST['num']);
-    $num = (int)$num;
-}
+//session_start();
+// if(isset($_POST['num'])){
+//     $num = htmlspecialchars($_POST['num']);
+//     $num = (int)$num;
+// }
 
 // função para verificar a tentativa do usuario
 function verificaTentativa($num, $numSecreto){
@@ -15,33 +15,40 @@ function verificaTentativa($num, $numSecreto){
         return "Acertou";
     }
 }
+
+
+if (isset($_POST['acao'])) {
+    $acao = $_POST['acao'];
+}else{
+    $acao = '';
+}
 // verificando se o usuario quer jogar ou sair do jogo
 if ($acao=='sair'){
     $_SESSION['mensagem'] = "Você saiu do jogo! Até a próxima!";
         unset($_SESSION['numSecreto']);
         unset($_SESSION['numTentativas']);
+        return;
     }
-        header("Location: index.php");
-        exit;
+      
 
 if ($acao=='calcular'){
-    $numUsuario = $num;
-    $palpite = $_SESSION['numSecreto'];
-    $_SESSION['tentativas']++;
+    $numUsuario = (int)$_POST['numUsuario'];
+    $numMaquina = $_SESSION['numSecreto'];
+    $_SESSION['numTentativas']++;
     //chama a função
-    $resultado = verificaTentativa($numUsuario,$palpite);
+    $resultado = verificaTentativa($numUsuario,$numMaquina);
 
     if($resultado == "Acertou"){
         $_SESSION['mensagem'] = "Parabéns! Você concluiu o desafio após {$_SESSION['numTentativas']} tentativas!";
     
-         while (isset($_SESSION['numero'])) {
-            unset($_SESSION['numero']);
-            unset($_SESSION['tentativas']);
+        while (isset($_SESSION['numSecreto'])) {
+            unset($_SESSION['numSecreto']);
+            unset($_SESSION['numTentativas']);
             }
         }else {
             $_SESSION['mensagem'] = $resultado;
         }
-    header("Location: index.php");
-    exit; 
+   
 }
+
 ?>

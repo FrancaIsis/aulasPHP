@@ -11,7 +11,7 @@ Exiba ao final quantas vezes cada vogal aparece.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de vogais</title>
-    <link rel="stylesheet" href="css/estilo.css"/>
+    <link rel="stylesheet" href="public/css/estilo.css"/>
 </head>
 <body>
     <header>
@@ -28,4 +28,7 @@ Exiba ao final quantas vezes cada vogal aparece.
     </main>
     
 </body>
+<footer>
+    <p>&copy;Curso de Desenvolvimento de Sistemas - Senac - 2025
+</footer>
 </html>

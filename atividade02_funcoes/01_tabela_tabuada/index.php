@@ -11,7 +11,7 @@ Utilize estruturas de repetição aninhadas.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabuada</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="public/css/estilo.css">
 </head>
 <body>
     <header>
@@ -26,14 +26,18 @@ Utilize estruturas de repetição aninhadas.
                     <button type="submit">Calcular</button>
                 </form>
             </div>
+            <div class="resultado">
+            <?php
+            // Se o formulário foi enviado, inclui o arquivo que processa a tabuada
+            if (isset($_POST['numero'])) {
+                include 'public/processa.php';
+            }
+            ?> 
+            </div>
         </div>
-    </main>
-
-<?php
-    // Se o formulário foi enviado, inclui o arquivo que processa a tabuada
-    if (isset($_POST['numero'])) {
-        include 'public/processa.php';
-    }
-    ?>    
+    </main>   
 </body>
+<footer>
+    <p>&copy;Curso de Desenvolvimento de Sistemas - Senac - 2025
+</footer>
 </html>

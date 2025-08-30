@@ -69,10 +69,18 @@ if (isset($funcoes[$chave])) {
     $resultado = $num; //na lista do array associativo nao vai ter tipo cc ou ff
 }
 
+// if ($resultado != $num){
+//     echo $num.$unidades[$atual]."=".$resultado.$unidades[$novo];
+// }
+// else{
+//     echo "A conversão proposta não é valida.";
+//}
 if ($resultado != $num){
-    echo $num.$unidades[$atual]."=".$resultado.$unidades[$novo];
+    $_SESSION['resultado'] = "{$num}{$unidades[$atual]} = {$resultado}{$unidades[$novo]}";
+} else {
+    $_SESSION['resultado'] = "A conversão proposta não é válida.";
 }
-else{
-    echo "A conversão proposta não é valida.";
-}
+
+
+
 ?>

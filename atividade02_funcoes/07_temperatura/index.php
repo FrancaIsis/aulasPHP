@@ -6,8 +6,8 @@ Crie um programa que converta temperaturas entre Celsius, Fahrenheit e Kelvin.
 - Permita que o usuário repita quantas conversões quiser. -->
 <?php
 session_start();
-$resultado='';
-$mensagem= '';
+// $resultado='';
+// $mensagem= '';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     include 'public/processa.php';
@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de temperaturas</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="public/css/estilo.css">
 </head>
 <body>
     <header>
@@ -47,18 +47,23 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
                     <button type="submit">Calcular</button>
                 </form>
-
+            </div>
+            <div class="resultado">
                 <?php
- if (isset($_SESSION['resultado'])) {
+                 if (isset($_SESSION['resultado'])) {
                 echo "<h3>Resultado: " . $_SESSION['resultado'] . "</h3>";
                 unset($_SESSION['resultado']); 
-            }
-?>  
+                }
+                ?>  
             </div>
+            
             <a id="voltar" href="index.php">Voltar</a>
         </div>
     </main>
  
 
 </body>
+<footer>
+    <p>&copy;Curso de Desenvolvimento de Sistemas - Senac - 2025
+</footer>
 </html>
