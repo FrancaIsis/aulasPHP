@@ -42,62 +42,66 @@ main {
     width: 100%;
 }
 
-/* Caixa do formulário */
-.caixa {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
+.caixa form {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Label e inputs */
-.caixa label {
-    display: block;
-    margin-bottom: 10px;
+label {
     font-weight: bold;
+    margin: 10px 0 5px;
 }
 
-.caixa input[type="number"] {
-    width: 80%;
-    padding: 10px;
+input[type="number"], select {
+    width: 100%;
+    padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-/* Botão */
-.caixa button, a {
-    background-color: #0077b6;
+input[type="number"]:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.resultado h3 {
+    margin-top: 15px;
+    color: #28a745;
+}
+
+#voltar {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.caixa button:hover, a {
-    background-color: #005f87;
-}
-.resultado{
-    background-color: rgb(159, 214, 222);
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    line-height: 1.5;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', Verdana, sans-serif;
-    height: auto;
-    color: rgb(14, 14, 75);
-}
-a{
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-    padding: auto;
+#voltar:hover {
+    background-color: #003d80;
 }
 footer {
     background-color: #0077b6;  

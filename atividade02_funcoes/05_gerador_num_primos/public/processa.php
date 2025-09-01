@@ -2,7 +2,7 @@
 É maior que 1: O número 1 não é considerado primo.
 Possui apenas dois divisores: Um e ele mesmo.  -->
 <?php
-//session_start(); iniciando a sessao
+session_start(); //iniciando a sessao
 
 // verifica o metodo de envio e trata o dado recebido
 if(isset($_POST['numero'])){
@@ -28,13 +28,20 @@ function verificaPrimo($n){
 
 for($i = 1; $i <= $num; $i++){
     if(verificaPrimo($i)){
-        echo "<pre>";
-        print_r($i);
-        echo "</pre>";
+       $primos[] = $i;
     }
 }
+// Salva na sessão usando loop
+if (!empty($primos)) {
+    $resultado = "";
+    foreach($primos as $valor){
+        $resultado .= $valor . ", "; // adiciona vírgula depois de cada número
+    }
+    $resultado = rtrim($resultado, ", "); // remove a última vírgula
+    $_SESSION['resultado'] = $resultado;
+} else {
+    $_SESSION['resultado'] = "Não existem números primos no intervalo informado.";
+}
 
-echo"<hr>";
-echo "<a href='index.php'>Voltar</a>";
 
 ?>
