@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Adivinhação</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="public/css/estilo.css">
 </head>
 <body>
     <header>
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     <input type="number" id="numUsusario" name="numUsuario" min=1 max=100 required>
                    
                     <button type="submit" value="calcular" name="acao">Adivinhar</button>
-                    <button type="submit" value="sair" name="acao">Sair</button>
+                    <button type="submit" id="sair" value="sair" name="acao">Sair</button>
                 </form>
             <?php if (isset($_SESSION['mensagem'])): ?>
                 <p><strong><?php echo $_SESSION['mensagem']; ?></strong></p>
